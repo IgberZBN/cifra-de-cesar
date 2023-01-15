@@ -71,8 +71,8 @@ button:hover, #inTexto:hover{
     0px 2.5px 6.9px rgba(0, 0, 0, 0.149),
     0px 4.5px 8px rgba(0, 0, 0, 0.125),
     0px 8.4px 9.8px rgba(0, 0, 0, 0.101),
-    0px 20px 15px rgba(0, 0, 0, 0.07)
-;
+    0px 20px 15px rgba(0, 0, 0, 0.07);
+    cursor: pointer;
 }
 #btCrip{
     border-color: #5d6851;
