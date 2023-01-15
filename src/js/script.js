@@ -9,7 +9,12 @@ frm.addEventListener("submit", (e)=>{
 });
 
 bt1.addEventListener("click", ()=>{
-    console.log("Criptografar");
+    const texto = frm.inTexto.value;
+    const textoSplit = texto.split("");
+    const textoAscii = textoSplit.map((t)=>{
+        return t.codePointAt();
+    })
+    console.log(textoAscii);
 })
 bt2.addEventListener("click", ()=>{
     console.log("Descriptografar");
