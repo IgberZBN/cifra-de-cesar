@@ -9,12 +9,17 @@ body{
     background-color: #242527;
 }
 #container{
-    margin: auto;
+    margin: 200px auto;
     width: 60%;
     background-color: #333134;
     text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 300px;
 }
-
+section{
+    height: 100%;
+}
 /*
 */
 
@@ -23,6 +28,7 @@ h1{
     margin-bottom: 15px;
     font-size: 32px;
     text-transform: uppercase;
+    color: #494D5E;
 }
 
 /*
@@ -58,7 +64,7 @@ button{
     margin: 15px;
     transition: 0.5s;
 }
-button:hover{
+button:hover, #inTexto:hover{
     box-shadow:
     0px 0.6px 4.6px rgba(0, 0, 0, 0.25),
     0px 1.3px 5.9px rgba(0, 0, 0, 0.18),
@@ -85,4 +91,18 @@ button:hover{
 #btDesc:hover{
     background-color: #CB5128;
     color: #333134;
+}
+
+/*
+    footer:
+*/
+
+i{
+    font-size: 50px;
+    transition: 0.5s;
+    color: #494D5E;
+    margin: 15px 0;
+}
+i:hover{
+    font-size: 60px;
 }
