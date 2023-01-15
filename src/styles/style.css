@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #242527;
+}
+#container{
+    margin: auto;
+    width: 60%;
+    background-color: #333134;
+    text-align: center;
+}
+
+/*
+*/
+
+
+h1{
+    margin-bottom: 15px;
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+/*
+    inputs and buttons:
+*/
+
+/*
+    input:
+*/
+
+#inTexto{
+    width: 95%;
+    height: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.5s;
+}
+#inTexto:focus{
+    outline: none;
+}
+#inTexto:hover{
+    width: 97%;
+    height: 35px;
+}
+/*
+    buttons:
+*/
+
+button{
+    width: 130px;
+    height: 45px;
+    border: 3px solid;
+    margin: 15px;
+    transition: 0.5s;
+}
+button:hover{
+    box-shadow:
+    0px 0.6px 4.6px rgba(0, 0, 0, 0.25),
+    0px 1.3px 5.9px rgba(0, 0, 0, 0.18),
+    0px 2.5px 6.9px rgba(0, 0, 0, 0.149),
+    0px 4.5px 8px rgba(0, 0, 0, 0.125),
+    0px 8.4px 9.8px rgba(0, 0, 0, 0.101),
+    0px 20px 15px rgba(0, 0, 0, 0.07)
+;
+}
+#btCrip{
+    border-color: #5d6851;
+    background-color: #333134;
+    color: #5d6851;
+}
+#btDesc{
+    border-color: #CB5128;
+    background-color: #333134;
+    color: #CB5128;
+}
+#btCrip:hover{
+    background-color: #5d6851;
+    color: #333134;
+}
+#btDesc:hover{
+    background-color: #CB5128;
+    color: #333134;
+}
