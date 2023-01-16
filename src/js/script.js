@@ -1,7 +1,7 @@
 
 const frm = document.querySelector("form");
-const bt1 = document.querySelector("#btCrip"); //referencia ao botao de Criptografar
-const bt2 = document.querySelector("#btDesc"); //referencia ao botao de Descriptografar
+const bt1 = document.querySelector("#btCrip");
+const bt2 = document.querySelector("#btDesc"); 
 const resp = document.querySelector("#resp");
 
 //Function para prevenir o submit:
