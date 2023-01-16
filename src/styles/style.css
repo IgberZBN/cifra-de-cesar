@@ -20,6 +20,9 @@ body{
 section{
     height: 100%;
 }
+.textoCinza{
+    color: #494D5E;
+}
 /*
 */
 
@@ -28,7 +31,6 @@ h1{
     margin-bottom: 15px;
     font-size: 32px;
     text-transform: uppercase;
-    color: #494D5E;
 }
 
 /*
@@ -57,14 +59,15 @@ h1{
     buttons:
 */
 
-button{
+.formBt{
     width: 130px;
     height: 45px;
     border: 3px solid;
     margin: 15px;
     transition: 0.5s;
+    background-color: #333134;
 }
-button:hover, #inTexto:hover{
+.formBt:hover, #inTexto:hover{
     box-shadow:
     0px 0.6px 4.6px rgba(0, 0, 0, 0.25),
     0px 1.3px 5.9px rgba(0, 0, 0, 0.18),
@@ -76,12 +79,10 @@ button:hover, #inTexto:hover{
 }
 #btCrip{
     border-color: #5d6851;
-    background-color: #333134;
     color: #5d6851;
 }
 #btDesc{
     border-color: #CB5128;
-    background-color: #333134;
     color: #CB5128;
 }
 #btCrip:hover{
@@ -93,22 +94,35 @@ button:hover, #inTexto:hover{
     color: #333134;
 }
 
-#resp{
-    color: #494D5E;
-}
 .respTitulo{
     font-size: 20px;
+}
+.resp{
+    background-color: #242527;
+}
+.btCopy, .fa-copy{
+    background-color: #333134;
+}
+.btCopy{
+    transition: 0.5s;
+}
+.btCopy:hover{
+    cursor: pointer;
+    font-size: 16px;
+}
+.btCopy:focus{
+    transition: none;
+    color: #5d6851;
 }
 /*
     footer:
 */
 
-i{
+.fa-github{
     font-size: 50px;
     transition: 0.5s;
-    color: #494D5E;
     margin: 15px 0;
 }
-i:hover{
+.fa-github:hover{
     font-size: 60px;
 }

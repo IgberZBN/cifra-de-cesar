@@ -29,10 +29,20 @@ bt1.addEventListener("click", ()=>{
     })
     resp.innerHTML = 
     `
-    <span class="respTitulo">Criptografia do texto:</span><br>
-    ${texto.join('')}
+    <span class="respTitulo textoCinza">Criptografia do texto:</span><br>
+    <span class="resp textoCinza textoParaCopiar">${texto.join('')}</span>&nbsp;&nbsp;<button onclick="copy()" type="button" class="btCopy textoCinza"><i class="fa-solid fa-copy resp"></i></button>
     `
 })
 bt2.addEventListener("click", ()=>{
     console.log("Descriptografar");
 })
+
+function copy(){
+    let texto = document.querySelector(".textoParaCopiar")
+    let textArea = document.createElement("textarea");
+    textArea.value = texto.textContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("Copy");
+    textArea.remove();
+}
