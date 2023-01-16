@@ -9,12 +9,15 @@ frm.addEventListener("submit", (e)=>{
 });
 
 bt1.addEventListener("click", ()=>{
-    const texto = frm.inTexto.value;
+    const texto = (frm.inTexto.value).toUpperCase();
     const textoSplit = texto.split("");
-    const textoAscii = textoSplit.map((t)=>{
+    const textoAscii = textoSplit.map((t)=>{ 
         return t.codePointAt();
     })
-    console.log(textoAscii);
+    const textoFilter = textoAscii.filter((n)=>{
+        return (n == 32 || n >= 65 && n<=91);
+    })
+    
 })
 bt2.addEventListener("click", ()=>{
     console.log("Descriptografar");
