@@ -93,6 +93,12 @@ button:hover, #inTexto:hover{
     color: #333134;
 }
 
+#resp{
+    color: #494D5E;
+}
+.respTitulo{
+    font-size: 20px;
+}
 /*
     footer:
 */
