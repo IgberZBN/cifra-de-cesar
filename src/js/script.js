@@ -30,7 +30,7 @@ bt1.addEventListener("click", ()=>{
     resp.innerHTML = 
     `
     <span class="respTitulo textoCinza">Criptografia do texto:</span><br>
-    <label for="btCopy"><span class="resp textoCinza textoParaCopiar">${texto.join('')}</span>&nbsp;&nbsp;<button onclick="copy()" type="button" id="btCopy" class="btCopy textoCinza"><i class="fa-solid fa-copy resp"></i></button></label>
+    <span class="resp textoCinza textoParaCopiar">${texto.join('')}</span>&nbsp;&nbsp;<label for="btCopy" class="pointer"><button onclick="copy()" type="button" id="btCopy" class="btCopy textoCinza"><i class="fa-solid fa-copy resp"><span class="hidden">Copiar</span></i></button></label>
     `
 })
 bt2.addEventListener("click", ()=>{
@@ -54,7 +54,7 @@ bt2.addEventListener("click", ()=>{
     resp.innerHTML = 
     `
     <span class="respTitulo textoCinza">Descriptografia do texto:</span><br>
-    <label for="btCopy"><span class="resp textoCinza textoParaCopiar">${texto.join('')}</span>&nbsp;&nbsp;<button onclick="copy()" type="button" id="btCopy" class="btCopy textoCinza"><i class="fa-solid fa-copy resp"></i></button></label>
+    <span class="resp textoCinza textoParaCopiar">${texto.join('')}</span>&nbsp;&nbsp;<label for="btCopy" class="pointer"><button onclick="copy()" type="button" id="btCopy" class="btCopy textoCinza"><i class="fa-solid fa-copy resp"><span class="hidden">Copiar</span></i></button></label>
     `
 })
 

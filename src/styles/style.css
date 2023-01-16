@@ -23,6 +23,9 @@ section{
 .textoCinza{
     color: #494D5E;
 }
+.pointer{
+    cursor: pointer;
+}
 /*
 */
 
@@ -75,7 +78,6 @@ h1{
     0px 4.5px 8px rgba(0, 0, 0, 0.125),
     0px 8.4px 9.8px rgba(0, 0, 0, 0.101),
     0px 20px 15px rgba(0, 0, 0, 0.07);
-    cursor: pointer;
 }
 #btCrip{
     border-color: #5d6851;
@@ -94,6 +96,10 @@ h1{
     color: #333134;
 }
 
+/*
+    resposta:
+*/
+
 .respTitulo{
     font-size: 20px;
 }
@@ -102,17 +108,22 @@ h1{
 }
 .btCopy, .fa-copy{
     background-color: #333134;
-}
-.btCopy{
-    transition: 0.5s;
-}
-#btCopy:hover{
     cursor: pointer;
+}
+.hidden{
+    visibility: hidden;
+}
+#btCopy:hover .hidden{
+    visibility: visible;
     font-size: 16px;
 }
+#btCopy:not(:focus){
+    transition: 2s;
+    transition-delay: 0.2s;
+}
 #btCopy:focus{
-    transition: none;
     color: #5d6851;
+    font-size: 18px;
 }
 /*
     footer:
