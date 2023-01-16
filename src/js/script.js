@@ -9,7 +9,7 @@ frm.addEventListener("submit", (e)=>{
 });
 
 bt1.addEventListener("click", ()=>{
-    const texto = (frm.inTexto.value).toUpperCase();
+    let texto = (frm.inTexto.value).toUpperCase();
     const textoSplit = texto.split("");
     const textoAscii = textoSplit.map((t)=>{ 
         return t.codePointAt();
@@ -19,6 +19,9 @@ bt1.addEventListener("click", ()=>{
     })
     const textoRotacao = textoFilter.map((n)=>{
         return(n-65+1)%26+65
+    })
+    texto = textoRotacao.map((n)=>{
+        return String.fromCharCode(n);
     })
 })
 bt2.addEventListener("click", ()=>{
