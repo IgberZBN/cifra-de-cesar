@@ -17,7 +17,9 @@ bt1.addEventListener("click", ()=>{
     const textoFilter = textoAscii.filter((n)=>{
         return (n == 32 || n >= 65 && n<=91);
     })
-    
+    const textoRotacao = textoFilter.map((n)=>{
+        return(n-65+1)%26+65
+    })
 })
 bt2.addEventListener("click", ()=>{
     console.log("Descriptografar");
