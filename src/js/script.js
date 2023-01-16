@@ -30,7 +30,7 @@ bt1.addEventListener("click", ()=>{
     resp.innerHTML = 
     `
     <span class="respTitulo textoCinza">Criptografia do texto:</span><br>
-    <span class="resp textoCinza textoParaCopiar">${texto.join('')}</span>&nbsp;&nbsp;<button onclick="copy()" type="button" class="btCopy textoCinza"><i class="fa-solid fa-copy resp"></i></button>
+    <label for="btCopy"><span class="resp textoCinza textoParaCopiar">${texto.join('')}</span>&nbsp;&nbsp;<button onclick="copy()" type="button" id="btCopy" class="btCopy textoCinza"><i class="fa-solid fa-copy resp"></i></button></label>
     `
 })
 bt2.addEventListener("click", ()=>{
