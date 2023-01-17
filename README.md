@@ -31,7 +31,7 @@ A cifra de César é um método de criptografia simples que consiste em substitu
 >
 >Assim, a função retorna um novo array "textoSplit" onde cada elemento representa um caractere do texto original.
 
->#### 2. <a id="transformar"></a>Transformar letra em numero
+>#### 2. <a id="transformar"></a>Transformar letra em número
 >
 >```js
 >const textoAscii = textoSplit.map((t)=>{ 
@@ -60,7 +60,7 @@ A cifra de César é um método de criptografia simples que consiste em substitu
 >Assim, a função retorna um novo array "textoFilter" onde cada elemento representa o valor ASCII correspondente a caracteres válidos do texto original.
 >
 
-> #### 4. <a id="rotacao"></a>O substituição/rotação é feita da seguinte maneira
+> #### 4. <a id="rotacao"></a>Substituição/rotação
 >
 > ```js
 > const textoRotacao = textoFilter.map((n)=>{
