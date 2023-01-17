@@ -38,7 +38,7 @@ Assim, a função retorna um novo array "textoAscii" onde cada elemento represen
 
 ```js
 const textoFilter = textoAscii.filter((n)=>{
-    return (n == 32 || n >= 65 && n<=91); // 32 = space, 65>= ou <=91 A ate Z
+    return (n == 32 || n >= 65 && n<=91);
 })
 ```
 
