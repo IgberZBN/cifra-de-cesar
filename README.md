@@ -21,7 +21,7 @@ A cifra de César é um método de criptografia simples que consiste em substitu
 >const textoSplit = texto.split("");
 >```
 >
->Esse código é uma função que que divide o texto de entrada (texto) em um array de caracteres. A função cria uma nova variável "textoSplit" que é um array, onde cada elemento representa um caractere do texto original.
+>Primeiramente iremos dividir cada letra do texto, para facilitar a a cifragem. O código que está acima é uma função que divide o texto de entrada (texto) em um array de caracteres. A função cria uma nova variável "textoSplit" que é um array, onde cada elemento representa um caractere do texto original.
 >
 >A função usa o método split() para dividir o texto original em um array de caracteres. O método split() é usado passando como parâmetro uma string vazia (""), o que indica que o texto deve ser dividido em cada caractere.
 >
@@ -39,7 +39,7 @@ A cifra de César é um método de criptografia simples que consiste em substitu
 >})
 >```
 >
->Esse código é uma função que modifica o texto de entrada (textoSplit) para converter cada caractere em seu valor equivalente na tabela ASCII. A função cria uma nova variável "textoAscii" que é um array, onde cada elemento representa um valor ASCII de cada caractere do texto original.
+>Logo após dividir cada letra do texto iremos tranformar eles números, esse código é uma função que modifica o texto de entrada (textoSplit) para converter cada caractere em seu valor equivalente na tabela ASCII. A função cria uma nova variável "textoAscii" que é um array, onde cada elemento representa um valor ASCII de cada caractere do texto original.
 >
 >A função usa o método map() para iterar sobre cada elemento do array "textoSplit" e aplicar a conversão de caractere para valor ASCII. Dentro do map, há uma função que usa o método codePointAt() para retornar o valor ASCII do caractere atual.
 >
@@ -53,7 +53,7 @@ A cifra de César é um método de criptografia simples que consiste em substitu
 >})
 >```
 >
->Esse código é uma função que filtra o texto de entrada (textoAscii) para remover caracteres indesejados(caracteres especiais e numeros...). A função cria uma nova variável "textoFilter" que é um array, onde cada elemento representa um valor ASCII de caracteres válidos.
+>Para filtrar os dados, ultilizaremos a seguinte função, que filtra o texto de entrada (textoAscii) para remover caracteres indesejados(caracteres especiais e numeros...). A função cria uma nova variável "textoFilter" que é um array, onde cada elemento representa um valor ASCII de caracteres válidos.
 >
 >A função usa o método filter() para iterar sobre cada elemento do array "textoAscii" e aplicar uma lógica de filtragem. Dentro do filter, há uma função que usa uma condição para verificar se o elemento atual é igual a 32 (valor ASCII do espaço em branco) ou se está entre 65 (valor ASCII de "A") e 91 (valor ASCII de "Z"). Se a condição for verdadeira, o elemento é incluído no array "textoFilter", caso contrário, é removido.
 >
@@ -93,7 +93,7 @@ A cifra de César é um método de criptografia simples que consiste em substitu
 > })
 > ```
 >
-> Esse código é uma função que transforma o texto de entrada (textoRotacao) de valores ASCII para caracteres. A função cria uma nova variável "textoCifrado" que é um array, onde cada elemento representa um caractere do texto cifrado.
+> Por ultimo, para obter o texto cifrado ultilizamos a seguinte função. Função que transforma o texto de entrada (textoRotacao) de valores ASCII para caracteres. A função cria uma nova variável "textoCifrado" que é um array, onde cada elemento representa um caractere do texto cifrado.
 >
 > A função usa o método map() para iterar sobre cada elemento do array "textoRotacao" e aplicar a conversão de valor ASCII para caractere. Dentro do map, há uma função que usa o método fromCharCode() da classe String para retornar o caractere correspondente ao valor ASCII.
 >
