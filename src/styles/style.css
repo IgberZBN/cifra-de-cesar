@@ -1,158 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 *{
-    border: 0;
-    margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 body{
     background-color: #2F2F36;
 }
 #container{
-    margin: 100px auto;
-    width: 60%;
-    background-color: #;
+    background-color: blue;
+    /*background-color: rgba(41, 41, 48, 0.5);*/
+    margin: 0 auto;
+    width: max(300px, 52.972972973%);
     text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-    height: 350px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
-section{
-    height: 100%;
-}
-.textoCinza{
-    color: #fff;
-}
-.pointer{
-    cursor: pointer;
-}
-/*
-*/
-
-
 h1{
-    margin-bottom: 15px;
-    font-size: 32px;
-    text-transform: uppercase;
+    font-size: clamp(1.5em, 4vw, 2em);
 }
-
-/*
-    inputs and buttons:
-*/
-
-/*
-    input:
-*/
-
 #inTexto{
-    width: 95%;
-    height: 45px;
+    width: 51.020408163%;
+    height: 35px;
     text-align: center;
-    transition: 0.5s;
+    font-size: clamp(0.8em, 1.5vw, 1em);
+    transition: width 0.5s;
 }
 #inTexto:focus{
     outline: none;
+    width: 81.632653061%;
 }
 #inTexto:hover{
-    width: 97%;
-    height: 50px;
-}
-/*
-    buttons:
-*/
-
-.formBt{
-    width: 130px;
-    height: 45px;
-    border: 3px solid;
-    margin: 15px;
-    transition: 0.5s;
-    background-color: #333134;
-}
-.formBt:hover, #inTexto:hover{
-    box-shadow:
-    0px 0.6px 4.6px rgba(0, 0, 0, 0.25),
-    0px 1.3px 5.9px rgba(0, 0, 0, 0.18),
-    0px 2.5px 6.9px rgba(0, 0, 0, 0.149),
-    0px 4.5px 8px rgba(0, 0, 0, 0.125),
-    0px 8.4px 9.8px rgba(0, 0, 0, 0.101),
-    0px 20px 15px rgba(0, 0, 0, 0.07);
-}
-#btCrip{
-    border-color: #55AA7A;
-    color: #55AA7A;
-}
-#btDesc{
-    border-color: #C64828;
-    color: #C64828;
-}
-#btCrip:hover{
-    background-color: #55AA7A;
-    color: #fff;
-}
-#btDesc:hover{
-    background-color: #C64828;
-    color: #fff;
-}
-
-/*
-    resposta:
-*/
-
-.respTitulo{
-    font-size: 20px;
-}
-.resp{
-    background-color: #242527;
-    width: 95%;
-}
-.btCopy, .fa-copy{
-    background-color: #333134;
-    cursor: pointer;
-}
-.hidden{
-    visibility: hidden;
-}
-#btCopy:hover .hidden{
-    visibility: visible;
-    font-size: 16px;
-}
-#btCopy:not(:focus){
-    transition: 2s;
-    transition-delay: 0.2s;
-}
-#btCopy:focus{
-    color: #55AA7A;
-    font-size: 18px;
-}
-/*
-    footer:
-*/
-
-.fa-github{
-    font-size: 50px;
-    transition: 0.5s;
-    margin: 15px 0;
-}
-.fa-github:hover{
-    font-size: 60px;
-}
-
-@media only screen and (max-width: 425px){
-    #container{
-        margin: 15px auto;
-        height: 500px;
-        box-sizing: content-box;
-    }
-    .hidden{
-        visibility: visible;
-    }
-}
-@media only screen and (max-width: 1024px){
-    .resp{
-        word-wrap: break-word;
-    }
-    .hidden{
-        word-wrap: normal;
-    }
+    width: 81.632653061%;
 }
