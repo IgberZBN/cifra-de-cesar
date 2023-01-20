@@ -10,9 +10,7 @@ frm.addEventListener("submit", (e)=>{
 function getId(){
     document.querySelectorAll("button").forEach(element=>{
         let id = element.getAttribute("id");
-        console.log("ids: "+id)
-        
-        element.addEventListener("click", function(){
+        element.addEventListener("click", ()=>{
             cifra(id);
         })
     })
@@ -33,19 +31,15 @@ function transformarAscii(texto){
     return texto.codePointAt();
 }
 function rotacao(id, ascii){
-    if(id === "btCrip"){
+    if(id == "btCrip"){
         if(ascii<65 || ascii>91){
-            console.log("estou no true 1")
             return ascii
         }
-        console.log("estou no else 1")
         return(ascii-65+1)%26+65
     } else {
         if(ascii<65 || ascii>91){
-            console.log("estou no true 2")
             return ascii
         }
-        console.log("estou no else 2")
         return(ascii+65-1)%26+65
     }
 }
@@ -63,9 +57,7 @@ function exibirTexto(texto,p,elementAdd){
         p.innerHTML = `${texto}`
         container.appendChild(p);
         elementAdd = true;
-        console.log('1')
     } else {
         p.innerHTML = `${texto}`
-        console.log('2')
     }
 }
