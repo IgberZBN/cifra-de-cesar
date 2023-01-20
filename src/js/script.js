@@ -1,17 +1,19 @@
 const frm = document.querySelector("form");
 const container = document.querySelector("#container");
 const buttonId = getId();
+let pStatus = false;
 
 frm.addEventListener("submit", (e)=>{
     e.preventDefault();
 })
 
-
 function getId(){
     document.querySelectorAll("button").forEach(element=>{
         let id = element.getAttribute("id");
         element.addEventListener("click", ()=>{
-            cifra(id);
+            const texto = cifra(id);
+            let paragrafoCriado = criarElemento();
+            pStatus = exibirTexto(paragrafoCriado, texto);
         })
     })
 }
@@ -22,11 +24,9 @@ function cifra (id){
     const textoAscii = textoSplit.map(transformarAscii);
     const textoRotacao = textoAscii.map(rotacao.bind(null,id));
     const textoCifrado = textoRotacao.map(transformarCaractere);
-    const [paragrafo, elementAdd] = criarElemento();
-    texto = textoCifrado.join("")
-    exibirTexto(texto, paragrafo, elementAdd);
+    texto = textoCifrado.join("");
+    return texto;
 }
-
 function transformarAscii(texto){
     return texto.codePointAt();
 }
@@ -46,18 +46,19 @@ function rotacao(id, ascii){
 function transformarCaractere(ascii){
     return String.fromCharCode(ascii);
 }
+
 function criarElemento(){
     const paragrafo = document.createElement("p");
-    paragrafo.id = "resp"
-    let elementAdd = false;
-    return [paragrafo, elementAdd];
+    paragrafo.id = "resp";
+    return paragrafo;
 }
-function exibirTexto(texto,p,elementAdd){
-    if(!elementAdd){
-        p.innerHTML = `${texto}`
-        container.appendChild(p);
-        elementAdd = true;
+function exibirTexto(p, t){
+    if(!pStatus){
+        p.innerHTML = t;
+        container.appendChild(p)
+        return pStatus = true
     } else {
-        p.innerHTML = `${texto}`
+        document.querySelector("#resp").innerHTML = t;
+        return pStatus = true
     }
 }
