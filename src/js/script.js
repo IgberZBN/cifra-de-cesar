@@ -50,6 +50,7 @@ function transformarCaractere(ascii){
 function criarElemento(){
     const paragrafo = document.createElement("p");
     paragrafo.id = "resp";
+    paragrafo.className = "branco"
     return paragrafo;
 }
 function exibirTexto(p, t){
