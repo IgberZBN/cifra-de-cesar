@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: sans-serif;
 }
 body{
     background-color: #2F2F36;
@@ -25,6 +26,7 @@ h1{
     text-align: center;
     font-size: clamp(0.8em, 1.5vw, 1em);
     transition: width 0.5s;
+    margin: 12px;
 }
 #inTexto:focus{
     outline: none;
@@ -32,4 +34,39 @@ h1{
 }
 #inTexto:hover{
     width: 81.632653061%;
+}
+.formBt{
+    border: 2px solid;
+    padding: 12px;
+    margin: 5px 5px;
+    background-color:   #2F2F36;
+}
+#btCrip{
+    color: #55AA7A;
+    border-color: #55AA7A;
+}
+#btDesc{
+    color: #C64828;
+    border-color: #C64828;
+}
+#btCrip:hover, #btDesc:hover{
+    color: white;
+}
+#btCrip:hover{
+    background-color: #55AA7A;
+}
+#btDesc:hover{
+    background-color: #C64828;
+}
+#resp{
+    font-size: clamp(1em, 1.5vw, 1.3em);
+    overflow-wrap: break-word;
+    margin: auto;
+    width: 90%;
+}
+#divResp{
+    font-size: clamp(1em, 1.5vw, 1.3em);
+    overflow-wrap: break-word;
+    margin: auto;
+    width: 90%;
 }

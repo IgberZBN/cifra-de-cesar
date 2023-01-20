@@ -1,68 +1,71 @@
-//fazer referencia aos elementos
-const frm = document.querySelector("form"); 
-const bt1 = document.querySelector("#btCrip"); //botao de criptografia
-const bt2 = document.querySelector("#btDesc"); //botao de descriptografia
-const resp = document.querySelector("#resp");
+const frm = document.querySelector("form");
+const container = document.querySelector("#container");
+const buttonId = getId();
 
 frm.addEventListener("submit", (e)=>{
-    e.preventDefault(); //cancelar o envio do formulario
-});
-
-bt1.addEventListener("click", ()=>{
-    let texto = (frm.inTexto.value).toUpperCase(); //pega o valor do input e tranforma as letras em maisculo 
-    const textoSplit = texto.split(""); //separa cada letra em uma unica array
-    const textoAscii = textoSplit.map((t)=>{ 
-        return t.codePointAt(); //transforma cada letra em numero
-    })
-    const textoFilter = textoAscii.filter((n)=>{
-        return (n == 32 || n >= 65 && n<=91); // 32 = space, 65>= ou <=91 A ate Z
-    })
-    const textoRotacao = textoFilter.map((n)=>{
-        if(n==32){
-            return n
-        }
-        return(n-65+1)%26+65
-    })
-    texto = textoRotacao.map((n)=>{
-        return String.fromCharCode(n); //tranforma o numero em letra
-    })
-    resp.innerHTML = 
-    `
-    <span class="respTitulo textoCinza">Criptografia do texto:</span><br>
-    <span class="resp textoCinza textoParaCopiar">${texto.join('')}</span>&nbsp;&nbsp;<label for="btCopy" class="pointer"><button onclick="copiarTexto()" type="button" id="btCopy" class="btCopy textoCinza"><i class="fa-solid fa-copy resp"><span class="hidden">Copiar</span></i></button></label>
-    `
-})
-bt2.addEventListener("click", ()=>{
-    let texto = (frm.inTexto.value).toUpperCase(); //pega o valor do input e tranforma as letras em maisculo 
-    const textoSplit = texto.split(""); //separa cada letra em uma unica array
-    const textoAscii = textoSplit.map((t)=>{ 
-        return t.codePointAt(); //transforma cada letra em numero 
-    })
-    const textoFilter = textoAscii.filter((n)=>{
-        return (n == 32 || n >= 65 && n<=91); // 32 = space, 65>= ou <=91 A ate Z
-    })
-    const textoRotacao = textoFilter.map((n)=>{
-        if(n==32){
-            return n
-        }
-        return(n+65-1)%26+65
-    })
-    texto = textoRotacao.map((n)=>{
-        return String.fromCharCode(n); //tranforma o numero em letra
-    })
-    resp.innerHTML = 
-    `
-    <span class="respTitulo textoCinza">Descriptografia do texto:</span><br>
-    <span class="resp textoCinza textoParaCopiar">${texto.join('')}</span>&nbsp;&nbsp;<label for="btCopy" class="pointer"><button onclick="copiarTexto()" type="button" id="btCopy" class="btCopy textoCinza"><i class="fa-solid fa-copy resp"><span class="hidden">Copiar</span></i></button></label>
-    `
+    e.preventDefault();
 })
 
-function copiarTexto(){
-    let texto = document.querySelector(".textoParaCopiar")
-    let textArea = document.createElement("textarea");
-    textArea.value = texto.textContent;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("Copy");
-    textArea.remove();
+
+function getId(){
+    document.querySelectorAll("button").forEach(element=>{
+        let id = element.getAttribute("id");
+        console.log("ids: "+id)
+        
+        element.addEventListener("click", function(){
+            cifra(id);
+        })
+    })
+}
+
+function cifra (id){
+    let texto = (frm.inTexto.value).toUpperCase();
+    const textoSplit = texto.split("");
+    const textoAscii = textoSplit.map(transformarAscii);
+    const textoRotacao = textoAscii.map(rotacao.bind(null,id));
+    const textoCifrado = textoRotacao.map(transformarCaractere);
+    const [paragrafo, elementAdd] = criarElemento();
+    texto = textoCifrado.join("")
+    exibirTexto(texto, paragrafo, elementAdd);
+}
+
+function transformarAscii(texto){
+    return texto.codePointAt();
+}
+function rotacao(id, ascii){
+    if(id === "btCrip"){
+        if(ascii<65 || ascii>91){
+            console.log("estou no true 1")
+            return ascii
+        }
+        console.log("estou no else 1")
+        return(ascii-65+1)%26+65
+    } else {
+        if(ascii<65 || ascii>91){
+            console.log("estou no true 2")
+            return ascii
+        }
+        console.log("estou no else 2")
+        return(ascii+65-1)%26+65
+    }
+}
+function transformarCaractere(ascii){
+    return String.fromCharCode(ascii);
+}
+function criarElemento(){
+    const paragrafo = document.createElement("p");
+    paragrafo.id = "resp"
+    let elementAdd = false;
+    return [paragrafo, elementAdd];
+}
+function exibirTexto(texto,p,elementAdd){
+    if(!elementAdd){
+        p.innerHTML = `${texto}`
+        container.appendChild(p);
+        elementAdd = true;
+        console.log('1')
+    } else {
+        p.innerHTML = `${texto}`
+        console.log('2')
+    }
 }
