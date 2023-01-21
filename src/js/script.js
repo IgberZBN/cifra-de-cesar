@@ -1,6 +1,6 @@
 const frm = document.querySelector("form");
 const container = document.querySelector("#container");
-const buttonId = getId();
+getId();
 let pStatus = false;
 
 frm.addEventListener("submit", (e)=>{
@@ -13,13 +13,16 @@ function getId(){
         element.addEventListener("click", ()=>{
             const texto = cifra(id);
             let paragrafoCriado = criarElemento();
-            pStatus = exibirTexto(paragrafoCriado, texto);
+            pStatus = exibirTexto(paragrafoCriado, texto)
         })
     })
 }
 
 function cifra (id){
     const numRotacao = Number(frm.inNumber.value);
+    const result = numValidate(numRotacao);
+    if(!result){return};
+
     let texto = (frm.inTexto.value).toUpperCase();
     const textoSplit = texto.split("");
     const textoAscii = textoSplit.map(transformarAscii);
@@ -63,4 +66,10 @@ function exibirTexto(p, t){
         document.querySelector("#resp").innerHTML = t;
         return pStatus = true
     }
+}
+function numValidate(numRotacao){
+    if(numRotacao>=0 && numRotacao<=26){
+        return true
+    }
+    return false
 }
