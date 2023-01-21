@@ -11,18 +11,17 @@ function getId(){
     document.querySelectorAll("button").forEach(element=>{
         let id = element.getAttribute("id");
         element.addEventListener("click", ()=>{
-            const texto = cifra(id);
+            const numRotacao = Number(frm.inNumber.value);
+            const result = numValidate(numRotacao);
+            if(!result){return};
+            const texto = cifra(id, numRotacao);
             let paragrafoCriado = criarElemento();
             pStatus = exibirTexto(paragrafoCriado, texto)
         })
     })
 }
 
-function cifra (id){
-    const numRotacao = Number(frm.inNumber.value);
-    const result = numValidate(numRotacao);
-    if(!result){return};
-
+function cifra (id, numRotacao){
     let texto = (frm.inTexto.value).toUpperCase();
     const textoSplit = texto.split("");
     const textoAscii = textoSplit.map(transformarAscii);
