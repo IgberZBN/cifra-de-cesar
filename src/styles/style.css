@@ -46,6 +46,29 @@ h1{
     background-color:   #2F2F36;
     width: 120px;
 }
+#inNumber{
+    box-sizing: content-box;
+    width: 35px;
+    text-align: center;
+    padding: 3px;
+    height: 30px;
+    border: none;
+    margin: 10px;
+}
+#inNumber:focus{
+    outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none; 
+}
+label{
+    display: block;
+}
+#butoes{
+    display: flex;
+    justify-content: center;
+}
 #btCrip{
     color: #55AA7A;
     border-color: #55AA7A;
@@ -85,4 +108,14 @@ footer i:hover{
 }
 .branco{
     color: white;
+}
+@media only screen and (max-width:595px){
+    #butoes{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    #inNumber{
+        order: -1;
+    }
 }

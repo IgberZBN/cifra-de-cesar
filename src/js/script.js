@@ -19,10 +19,11 @@ function getId(){
 }
 
 function cifra (id){
+    const numRotacao = Number(frm.inNumber.value);
     let texto = (frm.inTexto.value).toUpperCase();
     const textoSplit = texto.split("");
     const textoAscii = textoSplit.map(transformarAscii);
-    const textoRotacao = textoAscii.map(rotacao.bind(null,id));
+    const textoRotacao = textoAscii.map(rotacao.bind(null,id, numRotacao));
     const textoCifrado = textoRotacao.map(transformarCaractere);
     texto = textoCifrado.join("");
     return texto;
@@ -30,17 +31,17 @@ function cifra (id){
 function transformarAscii(texto){
     return texto.codePointAt();
 }
-function rotacao(id, ascii){
+function rotacao(id, nRotacao ,ascii){
     if(id == "btCrip"){
         if(ascii<65 || ascii>91){
             return ascii
         }
-        return(ascii-65+1)%26+65
+        return(ascii-65+nRotacao)%26+65
     } else {
         if(ascii<65 || ascii>91){
             return ascii
         }
-        return(ascii+65-1)%26+65
+        return(ascii+65-nRotacao)%26+65
     }
 }
 function transformarCaractere(ascii){

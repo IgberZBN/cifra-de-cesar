@@ -16,8 +16,10 @@
             </header>
             <form>
                 <input id="inTexto" type="text" maxlength="85" placeholder="Digite o texto aqui" autocomplete="off" spellcheck="false">
+                <label for="inNumber" class="branco">chave:</label>
                 <div id="butoes">
                     <button id="btCrip" class="formBt pointer" type="submit">Criptografar</button>
+                    <input  id="inNumber" max="26" step="1" type="number" min="0" value="0" placeholder="0-26">
                     <button id="btDesc" class="formBt pointer" type="submit">Descriptografar</button>
                 </div>
             </form>
